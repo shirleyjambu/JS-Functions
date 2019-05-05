@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <title>Teasers</title>
+  <style>
+    * {
+      border: 0px black solid;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100%;
+    }
+
+    .row {
+      line-height: 1.5em;
+    }
+
+    #result {
+      padding-top: 20px;
+      font-weight: bold;
+    }
+
+    .myBtn {
+      color: aquamarine;
+      background-color: black;
+    }
+  </style>
+
+  <!-- class ="col-12 col-sm-4 col-md-8 mb-5" ,
+         in this col-12 will be applied to mobile,
+         col-sm-4 for small screens.
+         col-md for medium screens and larger
+         application is from there to larger
+    -->
+</head>
+<!--print(getFactorial.toString())-->
+
+<body>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1>Brian Teasers</h1>
+    </div>
+    <!-- Buttons Div -->
+    <div style="line-height: 3em">
+      <button type="button" onclick="getFactorial()" class="btn myBtn">Factorial</button>
+      <button type="button" onclick="getHighestNumber()" class="btn myBtn">High Num</button>
+      <button name="palindrome" onclick="isPalindrome()" class="btn myBtn">Palindrome</button>
+      <button name="countWords" onclick="countWords()" class="btn myBtn">Count Words</button>
+      <button name="average" onclick="average()" class="btn myBtn">Average</button>
+      <button name="int" onclick="isInteger()" class="btn myBtn">An Integer?</button>
+      <button name="vowel" onclick="isVowel()" class="btn myBtn">Check vowel</button>
+      <button name="duplicate" onclick="findFirstDuplicate()" class="btn myBtn">Duplicate Number</button>
+      <button name="pangram" onclick="isPangram()" class="btn myBtn">A Pangram?</button>
+      <button name="checkDay" onclick="checkday()" class="btn myBtn">CheckDay</button>
+      <button name="removeDuplicates" onclick="removeDuplicates()" class="btn myBtn">Remove Duplicates</button>
+      <button name="doubleArr" onclick="doubleArr()" class="btn myBtn">Double Array</button>
+      <button name="callBack" onclick="cbArray()" class="btn myBtn">CallBack Functions</button>
+      <button name="anycheck" onclick="anyCheck()" class="btn myBtn">Check MultiFunction</button>
+      <button name="reverse" onclick="reverseDigit()" class="btn myBtn">Reverse Digit</button>
+      <button name="slug" onclick="createSlug()" class="btn myBtn">Create Endpoint</button>
+      <button name="ingr" onclick="getIngredient()" class="btn myBtn">Convert Ingredient</button>
+      <button name="cmd" onclick="parseCommand()" class="btn myBtn">Cmd</button>
+    </div>
+
+    <!-- End of buttons div-->
+    <div class="jumbotron my-2">
+      <span id="func"></span>
+      <i class="fa fa-brush"></i>
+      <span id="result"></span>
+    </div>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="problem.js"></script>
+</body>
+
+</html>
