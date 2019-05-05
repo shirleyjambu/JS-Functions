@@ -415,46 +415,33 @@ function getIngredient() {
   }
 }
 
-// Function to parse Cmd
-function parseCommand() {
-  let str = "paid SS 50";
+function binaryToDec() {
+  let bNum = prompt("Enter Binary Number");
+  let dNum = 0;
+  let mCnt = 0;
+  let nArr = bNum.split("");
 
-  const buyCmd = ["buy", "shop"];
-  const expensesCmd = ["Paid", "Spent"];
-  const scheduleCmd = ["Appointment", "Schedule", "Class"];
-
-  let CmdArr = [];
-  let IntArr = [];
-  let AmtArr = [];
-
-  let category = "NA";
-
-  let strArr = str.split(" ");
-  //
-  //let notes = strArr.splice(1,strArr.length).join(" ");
-
-  IntArr = strArr.filter(word => !isNaN(word));
-  CmdArr = strArr.filter(word => isNaN(word));
-
-  console.log(IntArr);
-  console.log(CmdArr);
-
-  if (CmdArr.length === 1) {
-    if (buyCmd.includes(CmdArr[0])) {
-      category = "buy";
-    } else if (expensesCmd.includes(CmdArr[0])) {
-      category = "expenses";
-    } else if (ScheduleCmd.includes(CmdArr[0])) {
-      category = "schedule";
-    }
+  for (let i = nArr.length - 1; i >= 0; i--) {
+    dNum = dNum + nArr[i] * Math.pow(2, mCnt);
+    mCnt++;
   }
 
-  console.log("Category :" + category);
-  // if Category is expenses or schedule
+  $("#result").text(dNum);
+}
 
-  /*if(category === "paid"){
-
+function decToBinary() {
+  let dNum = prompt("Enter Decimal Number");
+  let quo = parseInt(dNum);
+  let rem = "";
+  while (quo != 0) {
+    rem = rem + (quo % 2);
+    quo = parseInt(quo / 2);
   }
 
-  $("#result").text("Category = " + category + " ,notes = " + notes);*/
+  $("#result").text(
+    rem
+      .split("")
+      .reverse()
+      .join("")
+  );
 }
