@@ -445,3 +445,37 @@ function decToBinary() {
       .join("")
   );
 }
+
+function getSecondLargest() {
+  let nums = getNumberArray();
+  // Complete the function
+
+  /*let max;
+  let sM = 0;
+  nums = nums.sort();
+  max = nums[nums.length -1];
+  
+  for(let i = nums.length-1; i >= 0; i--){
+     if(nums[i] < max ){
+      sM = nums[i];
+      break;
+    }
+  }
+    
+  return sM;*/
+
+  let first = nums[0];
+  let second = -1;
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] > first) {
+      second = first;
+      first = nums[i];
+    }
+
+    if (nums[i] > second && nums[i] < first) {
+      second = nums[i];
+    }
+  }
+
+  $("#result").text(second);
+}
